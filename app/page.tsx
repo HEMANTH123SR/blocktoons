@@ -3,6 +3,7 @@ import { HeaderNav } from "@/components/NavBar";
 import { SpotLightCarsoul } from "@/components/Carsoule";
 import { TopTenWebToons } from "@/components/TopTenWebToons";
 import { WebtoonScrollComponent } from "@/components/LandingPageScrollHorizontalComponent";
+import { Footer } from "@/components/Footer";
 import { webToons } from "@/testdata/cardP";
 export default function Home() {
   return (
@@ -31,8 +32,8 @@ export default function Home() {
           webToons={webToons}
         />
       </div>
-
-      <div className="h-96"></div>
+      <div className="py-11"></div>
+      <Footer />
     </main>
   );
 }
