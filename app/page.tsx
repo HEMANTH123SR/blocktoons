@@ -2,8 +2,8 @@ import { krabbyPatty } from "@/lib/fonts/font";
 import { HeaderNav } from "@/components/NavBar";
 import { SpotLightCarsoul } from "@/components/Carsoule";
 import { TopTenWebToons } from "@/components/TopTenWebToons";
-import { RecentlyAdded } from "@/components/RecentlyAdded";
-import { Popular } from "@/components/Popular";
+import { WebtoonScrollComponent } from "@/components/LandingPageScrollHorizontalComponent";
+import { webToons } from "@/testData";
 export default function Home() {
   return (
     <main
@@ -18,6 +18,18 @@ export default function Home() {
           Top Web Toons This Week
         </h2>
         <TopTenWebToons />
+      </div>
+      <div className="px-8 py-10">
+      <WebtoonScrollComponent
+        title="Recently Added New Web Toons"
+        webToons={webToons}
+      />
+      </div>
+      <div className="px-8 py-10">
+        <WebtoonScrollComponent
+        title="Populare Web Toons We Think you many like it "
+        webToons={webToons}
+      />
       </div>
 
       <div className="h-96"></div>
