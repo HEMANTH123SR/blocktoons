@@ -31,7 +31,6 @@ export const HeaderNav = () => {
           : "bg-white"
       }`}
     >
-      {/* left navigation consist of logo and navigation links  */}
       <div className="flex items-center justify-center space-x-8">
         <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <h1
@@ -41,7 +40,6 @@ export const HeaderNav = () => {
           </h1>
         </Link>
       </div>
-      {/* NavigationMenuComponent */}
       <div className="hidden  md:block">
         <div className="flex space-x-5">
           <Link
