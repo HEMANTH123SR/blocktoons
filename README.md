@@ -125,8 +125,8 @@ Distributed under the MIT License. See [LICENSE](https://github.com/HEMANTH123SR
 
 ## Authors
 
-* **Hemanth** - *Comp Sci Student* - [Hemanth]https://github.com/HEMANTH123SR) - *Building Frontend and Blockchain Integration*
-* **Kundan** - *Comp Sci. Student* - [Kundan](https://github.com/Kundan730) - *Building Frontend and presentation*
+* **Hemanth** - *Comp Sci Student* - [Hemanth](https://github.com/HEMANTH123SR) - *Building Frontend and Blockchain Integration*
+* **Kundan** - *Comp Sci. Student* - [Kundan](https://github.com/Kundan730) - *Backend Development*
 * **test** - *Comp Sci. Student* - [test](https://github.com/) - *Building Frontend and presentation*
 
 ## Acknowledgements
