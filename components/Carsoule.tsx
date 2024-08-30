@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Badge } from "@/components/ui/badge";
-import { webToons as webToonsIntialData } from "@/testData";
+import { webToons as webToonsIntialData } from "@/testdata/testData";
 
 export function SpotLightCarsoul() {
   const [webToonsSpotLight, setWebToonsSpotlight] =

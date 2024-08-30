@@ -3,7 +3,7 @@ import { HeaderNav } from "@/components/NavBar";
 import { SpotLightCarsoul } from "@/components/Carsoule";
 import { TopTenWebToons } from "@/components/TopTenWebToons";
 import { WebtoonScrollComponent } from "@/components/LandingPageScrollHorizontalComponent";
-import { webToons } from "@/testData";
+import { webToons } from "@/testdata/cardP";
 export default function Home() {
   return (
     <main
@@ -20,16 +20,16 @@ export default function Home() {
         <TopTenWebToons />
       </div>
       <div className="px-8 py-10">
-      <WebtoonScrollComponent
-        title="Recently Added New Web Toons"
-        webToons={webToons}
-      />
+        <WebtoonScrollComponent
+          title="Recently Added New Web Toons"
+          webToons={webToons}
+        />
       </div>
       <div className="px-8 py-10">
         <WebtoonScrollComponent
-        title="Populare Web Toons We Think you many like it "
-        webToons={webToons}
-      />
+          title="Populare Web Toons We Think you many like it "
+          webToons={webToons}
+        />
       </div>
 
       <div className="h-96"></div>
