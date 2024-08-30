@@ -34,7 +34,7 @@ export const HeaderNav = () => {
       <div className="flex items-center justify-center space-x-8">
         <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <h1
-            className={`${krabbyPatty.className} text-[#FE560F] cursor-pointer font-semibold text-2xl first-letter:text-4xl`}
+            className={`${krabbyPatty.className} text-[#62C9C3] cursor-pointer font-semibold text-2xl first-letter:text-4xl`}
           >
             BloockToons
           </h1>
@@ -46,7 +46,7 @@ export const HeaderNav = () => {
             href={"/"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
-            Themes
+            Publish
           </Link>
           <Link
             href={"/"}
