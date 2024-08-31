@@ -1,14 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { FaHeart, FaBookmark } from "react-icons/fa6";
 import { HiUsers } from "react-icons/hi";
 import { krabbyPatty } from "@/lib/fonts/font";
-import { WebToonInterface, webToons } from "@/testdata/cardP";
+import { WebToonInterface } from "@/testdata/cardP";
 
 type PageProps = {
   params: { id: string };
@@ -16,12 +15,43 @@ type PageProps = {
 
 const Page: React.FC<PageProps> = ({ params }) => {
   const router = useRouter();
-  const [webToon, setWebToon] = useState<WebToonInterface | null>(webToons[1]);
+  const [webToon, setWebToon] = useState<WebToonInterface | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
 
-  if (!webToon) {
+  useEffect(() => {
+    const fetchWebToon = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch(`/api/webtoons?id=${params.id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch WebToon");
+        }
+        const data = await response.json();
+        if (data.success && data.data) {
+          setWebToon(data.data);
+        } else {
+          setError("WebToon not found");
+        }
+      } catch (err) {
+        setError("An error occurred while fetching the WebToon");
+        console.error(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchWebToon();
+  }, [params.id]);
+
+  if (isLoading) {
     return <div>Loading...</div>;
+  }
+
+  if (error || !webToon) {
+    return <div>{error || "WebToon not found"}</div>;
   }
 
   const capitalizeWords = (str: string): string => {
@@ -48,7 +78,9 @@ const Page: React.FC<PageProps> = ({ params }) => {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <Badge variant="secondary">CH: {webToon.chapters.length}</Badge>
+              {webToon.chapters.length && (
+                <Badge variant="secondary">CH: {webToon.chapters.length}</Badge>
+              )}
               <Badge variant="secondary">Updated: {webToon.lastUpdated}</Badge>
               <Badge variant="secondary">{webToon.status}</Badge>
             </div>
@@ -80,34 +112,35 @@ const Page: React.FC<PageProps> = ({ params }) => {
       </div>
       <ScrollArea className="px-16">
         <div className="flex flex-col space-y-6  px-4 lg:px-8 h-96">
-          {webToon?.chapters.map((chapter) => (
-            <div
-              className="flex items-center space-x-8 cursor-pointer"
-              key={chapter._id}
-              onClick={() =>
-                router.push(`${webToon.title}/chapter/${chapter._id}`)
-              }
-            >
-              <img
-                alt={chapter.title}
-                className="h-[100px] w-[100px] object-cover"
-                height="100"
-                src={chapter.imageUrls[0]}
-                style={{
-                  aspectRatio: "100/100",
-                  objectFit: "cover",
-                }}
-                width="100"
-              />
-              <div className="flex flex-col justify-start items-start">
-                <span className="text-lg font-mono text-[#E11D48]">{`#0${chapter.chapterNumber}`}</span>
-                <h2 className=" font-semibold font-sans">{`Chapter ${chapter.chapterNumber}: ${chapter.title}`}</h2>
-                <span className="text-xs text-gray-500 font-mono ">
-                  {chapter.publishedDate}
-                </span>
+          {webToon.chapters.length &&
+            webToon.chapters.map((chapter) => (
+              <div
+                className="flex items-center space-x-8 cursor-pointer"
+                key={chapter._id}
+                onClick={() =>
+                  router.push(`${webToon.title}/chapter/${chapter._id}`)
+                }
+              >
+                <img
+                  alt={chapter.title}
+                  className="h-[100px] w-[100px] object-cover"
+                  height="100"
+                  src={chapter.imageUrls[0]}
+                  style={{
+                    aspectRatio: "100/100",
+                    objectFit: "cover",
+                  }}
+                  width="100"
+                />
+                <div className="flex flex-col justify-start items-start">
+                  <span className="text-lg font-mono text-[#E11D48]">{`#0${chapter.chapterNumber}`}</span>
+                  <h2 className=" font-semibold font-sans">{`Chapter ${chapter.chapterNumber}: ${chapter.title}`}</h2>
+                  <span className="text-xs text-gray-500 font-mono ">
+                    {chapter.publishedDate}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           <ScrollBar orientation="vertical" className="hidden" />
         </div>
       </ScrollArea>

@@ -65,7 +65,7 @@ function CarouselCard({
           <img
             alt="The Girl I Like Forgot Her Glasses"
             className="h-[380px] w-11/12 border shadow-lg  rounded-sm"
-            src={`https://imgs.search.brave.com/U99PlYSGdruQs1Y7KEm_yfG0flIiZv7ap2Pzg1IVOhg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXIuZG9nL2xh/cmdlLzIwNTAyNTg4/LmpwZw`}
+            src={coverImage}
             style={{
               aspectRatio: "600/400",
               objectFit: "cover",
@@ -97,10 +97,7 @@ function CarouselCard({
                 ))}
             </div>
             <div>
-             
-              <p className="">
-                {`${description.slice(0, 600)}`}
-              </p>
+              <p className="">{`${description.slice(0, 600)}`}</p>
             </div>
             <div className="flex flex-col sm:flex-row space-x-4">
               <div className="flex  space-x-4 h-6 mt-2 ">
