@@ -1,5 +1,6 @@
 "use client";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { krabbyPatty } from "@/lib/fonts/font";
