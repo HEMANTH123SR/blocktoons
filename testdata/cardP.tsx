@@ -17,7 +17,7 @@ export interface WebToonInterface {
   createdBy: UserType;
 }
 
-// imageURls[]
+
 
 type Chapter = {
   _id: string;
@@ -25,8 +25,7 @@ type Chapter = {
   title: string;
   publishedDate: string;
   imageCount: number;
-
-  // imageUrls:string[]
+  imageUrls:string[]
 };
 
 type UserType = {
