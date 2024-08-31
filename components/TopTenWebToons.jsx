@@ -9,7 +9,7 @@ import "@splidejs/react-splide/css/core";
 import { Splide as ReactSplide, SplideSlide } from "@splidejs/react-splide";
 import Link from "next/link";
 
-// Create the TopTenWebToons component
+
 export const TopTenWebToons = () => {
   useEffect(() => {
     const splide = new Splide(".splide", {
@@ -23,7 +23,7 @@ export const TopTenWebToons = () => {
     });
 
     splide.mount({ AutoScroll });
-  }, []); // Empty dependency array to run only on mount
+  }, []); 
 
   return (
     <ReactSplide aria-label="Top Ten WebToons">
