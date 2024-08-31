@@ -207,7 +207,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-10 w-10 rounded-full bottom-10 right-14 -translate-x-1/2 mr-8 hover:bg-[#62C9C3] group ",
+        "absolute  h-10 w-10 rounded-full bottom-10 right-14 -translate-x-1/2 mr-8 hover:bg-[#E85C0D] group ",
 
         className
       )}
@@ -234,7 +234,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-10 w-10 rounded-full bottom-10 right-0 -translate-x-1/2  mr-8 hover:bg-[#62C9C3] group ",
+        "absolute h-10 w-10 rounded-full bottom-10 right-0 -translate-x-1/2  mr-8 hover:bg-[#E85C0D] group ",
 
         className
       )}

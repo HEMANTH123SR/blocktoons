@@ -33,8 +33,8 @@ export function SpotLightCarsoul() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="text-[#62C9C3]" />
-      <CarouselNext className="text-[#62C9C3]" />
+      <CarouselPrevious className="text-[#E85C0D]" />
+      <CarouselNext className="text-[#E85C0D]" />
     </Carousel>
   );
 }

@@ -1,11 +1,9 @@
 "use client";
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { SignUp } from "@clerk/nextjs";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { krabbyPatty } from "@/lib/fonts/font";
 import { Search } from "lucide-react";
-import { FaWallet } from "react-icons/fa";
 
 export const HeaderNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +35,7 @@ export const HeaderNav = () => {
       <div className="flex items-center justify-center space-x-8">
         <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <h1
-            className={`${krabbyPatty.className} text-[#62C9C3] cursor-pointer font-semibold text-2xl first-letter:text-4xl`}
+            className={`${krabbyPatty.className} text-[#E85C0D] cursor-pointer font-semibold text-2xl first-letter:text-4xl`}
           >
             BloockToons
           </h1>
@@ -46,7 +44,7 @@ export const HeaderNav = () => {
       <div className="hidden  md:block">
         <div className="flex space-x-5">
           <Link
-            href={"/"}
+            href={"/publish"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Publish
@@ -79,9 +77,9 @@ export const HeaderNav = () => {
         {/* <FaWallet className="text-2xl text-text cursor-pointer"/> */}
         <Link
           href={""}
-          className="rounded-lg border text-lg bg-white px-2.5 py-1 font-semibold text-black"
+          className="rounded-lg border text-lg bg-[#E85C0D]  px-2.5 py-1 font-semibold text-white"
         >
-Connect Wallet
+          Connect Wallet
         </Link>
         <div className="hidden md:flex">
           <SignedOut>
