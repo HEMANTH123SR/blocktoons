@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { FaHeart, FaBookmark } from "react-icons/fa6";
@@ -76,6 +78,39 @@ const Page: React.FC<PageProps> = ({ params }) => {
           </div>
         </div>
       </div>
+      <ScrollArea className="px-16">
+        <div className="flex flex-col space-y-6  px-4 lg:px-8 h-96">
+          {webToon?.chapters.map((chapter) => (
+            <div
+              className="flex items-center space-x-8 cursor-pointer"
+              key={chapter._id}
+              onClick={() =>
+                router.push(`${webToon.title}/chapter/${chapter._id}`)
+              }
+            >
+              <img
+                alt={chapter.title}
+                className="h-[100px] w-[100px] object-cover"
+                height="100"
+                src={chapter.imageUrls[0]}
+                style={{
+                  aspectRatio: "100/100",
+                  objectFit: "cover",
+                }}
+                width="100"
+              />
+              <div className="flex flex-col justify-start items-start">
+                <span className="text-lg font-mono text-[#E11D48]">{`#0${chapter.chapterNumber}`}</span>
+                <h2 className=" font-semibold font-sans">{`Chapter ${chapter.chapterNumber}: ${chapter.title}`}</h2>
+                <span className="text-xs text-gray-500 font-mono ">
+                  {chapter.publishedDate}
+                </span>
+              </div>
+            </div>
+          ))}
+          <ScrollBar orientation="vertical" className="hidden" />
+        </div>
+      </ScrollArea>
     </div>
   );
 };
