@@ -4,7 +4,7 @@
     <img src="https://www.nexusvista.tech/logo%20flash%20(1)_prev_ui.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">BlockToons</h3>
+  <h3 align="center">BlockToons - Diamante Devhub Hackathon</h3>
 
   <p align="center">
      Discover and read the best webtoons from around the world on the blockchain. 
