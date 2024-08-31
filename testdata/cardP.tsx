@@ -17,12 +17,16 @@ export interface WebToonInterface {
   createdBy: UserType;
 }
 
+// imageURls[]
+
 type Chapter = {
   _id: string;
   chapterNumber: number;
   title: string;
   publishedDate: string;
   imageCount: number;
+
+  // imageUrls:string[]
 };
 
 type UserType = {
@@ -75,9 +79,10 @@ export const webToons: WebToonInterface[] = [
     backgroundImage: "background2.jpg",
     tags: ["fantasy", "action"],
     status: "Completed",
-    description: "A tale of a hero's rise to become the Dragon King.",
+    description: `
+Legend of the Dragon King is a popular webtoon adapted from the Chinese light novel of the same name. The story follows Tang Wulin, a young boy with a deep connection to the dragons of legend. Set in a world where humanity coexists with powerful martial spirits, Wulin dreams of becoming a powerful soul master. However, his journey is anything but ordinary, as he discovers an ancient bloodline within himself—the lineage of the Dragon King.`,
     rating: 4.8,
-    viewCount: 2000,
+    viewCount: 200,
     likeCount: 2,
     isNew: false,
     isTrending: true,
@@ -260,3 +265,5 @@ export const webToons: WebToonInterface[] = [
     },
   },
 ];
+
+export const newWebToons: WebToonInterface[] = [];
