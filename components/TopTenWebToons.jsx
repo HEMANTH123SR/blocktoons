@@ -9,7 +9,6 @@ import "@splidejs/react-splide/css/core";
 import { Splide as ReactSplide, SplideSlide } from "@splidejs/react-splide";
 import Link from "next/link";
 
-
 export const TopTenWebToons = () => {
   useEffect(() => {
     const splide = new Splide(".splide", {
@@ -23,7 +22,7 @@ export const TopTenWebToons = () => {
     });
 
     splide.mount({ AutoScroll });
-  }, []); 
+  }, []);
 
   return (
     <ReactSplide aria-label="Top Ten WebToons">
@@ -33,7 +32,7 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image1.jpg" alt="WebToon 1" />
+          <img src="/pictures/01.png" alt="WebToon 1" />
         </Link>
       </SplideSlide>
       <SplideSlide>
@@ -42,7 +41,7 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image2.png" alt="WebToon 2" />
+          <img src="/pictures/02.png" alt="WebToon 2" />
         </Link>
       </SplideSlide>
       <SplideSlide>
@@ -51,7 +50,7 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image3.png" alt="WebToon 3" />
+          <img src="/pictures/03.png" alt="WebToon 3" />
         </Link>
       </SplideSlide>
       <SplideSlide>
@@ -60,7 +59,7 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image4.png" alt="WebToon 4" />
+          <img src="/pictures/04.png" alt="WebToon 4" />
         </Link>
       </SplideSlide>
       <SplideSlide>
@@ -69,7 +68,7 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image5.jpeg" alt="WebToon 5" />
+          <img src="/pictures/05.png" alt="WebToon 5" />
         </Link>
       </SplideSlide>
       <SplideSlide>
@@ -78,7 +77,7 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image6.jpg" alt="WebToon 6" />
+          <img src="/pictures/06.png" alt="WebToon 6" />
         </Link>
       </SplideSlide>
       <SplideSlide>
@@ -87,18 +86,18 @@ export const TopTenWebToons = () => {
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image7.jpg" alt="WebToon 7" />
+          <img src="/pictures/07.png" alt="WebToon 7" />
         </Link>
       </SplideSlide>
-      <SplideSlide>
+      {/* <SplideSlide>
         <Link
           href={"/"}
           target="_blank"
           className="flex cursor-pointer  justify-center items-center border-4 border-black"
         >
-          <img src="/path/to/image8.png" alt="WebToon 8" />
+          <img src="/pictures/08.png" alt="WebToon 8" />
         </Link>
-      </SplideSlide>
+      </SplideSlide> */}
     </ReactSplide>
   );
 };
