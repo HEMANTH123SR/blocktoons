@@ -1,16 +1,15 @@
 import { krabbyPatty } from "@/lib/fonts/font";
-import { HeaderNav } from "@/components/NavBar";
 import { SpotLightCarsoul } from "@/components/Carsoule";
 import { TopTenWebToons } from "@/components/TopTenWebToons";
 import { WebtoonScrollComponent } from "@/components/LandingPageScrollHorizontalComponent";
-import { Footer } from "@/components/Footer";
+
 import { webToons } from "@/testdata/cardP";
 export default function Home() {
   return (
     <main
       className={`flex  flex-col overflow-hidden max-w-screen h-full justify-start items-start bg-white`}
     >
-      <HeaderNav />
+    
       <SpotLightCarsoul />
       <div className="mx-2 flex flex-col mt-28 ">
         <h2
@@ -33,7 +32,7 @@ export default function Home() {
         />
       </div>
       <div className="py-11"></div>
-      <Footer />
+      
     </main>
   );
 }
