@@ -1,11 +1,13 @@
-'use client';
-import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
-import { SignUp } from '@clerk/nextjs';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { krabbyPatty } from '@/lib/fonts/font';
+"use client";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignUp } from "@clerk/nextjs";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { krabbyPatty } from "@/lib/fonts/font";
+import { Search } from "lucide-react";
+import { FaWallet } from "react-icons/fa";
 import { redirect, useRouter } from 'next/navigation';
-import { Search } from 'lucide-react';
+
 export const HeaderNav = () => {
   const router = useRouter();
 
@@ -76,12 +78,18 @@ export const HeaderNav = () => {
         </div>
       </div>
       {/* right navigation link consist of auth and search */}
-      <div className="flex justify-center items-center space-x-5 ">
-        <Link href={'/search'} className="hidden md:block">
+      <div className="flex justify-center items-center space-x-2 ">
+        <Link href={"/search"} className="hidden md:block mr-6">
           <Search className="text-2xl text-text cursor-pointer" />
         </Link>
-
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        {/* <FaWallet className="text-2xl text-text cursor-pointer"/> */}
+        <Link
+          href={""}
+          className="rounded-lg border text-lg bg-white px-2.5 py-1 font-semibold text-black"
+        >
+Connect Wallet
+        </Link>
+        <div className="hidden md:flex">
           <SignedOut>
             <button
               onClick={handleLogin}
