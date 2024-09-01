@@ -15,7 +15,7 @@ const DashBoardPage = () => {
       if (isLoaded) {
         const res = await fetch("/api");
         const data = await res.json();
-        if (data.status !== "success") {
+        if (!res.ok) {
           setSomethingWentWrong(true);
           return;
         }
@@ -73,12 +73,12 @@ const DashBoardPage = () => {
           Create new Webtoon
         </Button>
       </div>
-      <div className="min-h-[70vh] grid grid-cols-1 lg:grid-cols-2 gap-6 mx-12 bg-white">
+      <div className="pb-[70vh]  grid grid-cols-1 lg:grid-cols-2 gap-6 mx-12 bg-white">
         {webToon.map((webToon: WebToonInterface) => (
           <div
             key={webToon._id}
-            className="flex items-center gap-4 cursor-pointer"
-            onClick={() => router.push(`/${webToon._id}/dashboard/add-chapter`)}
+            className="flex items-center gap-4 cursor-pointer border mr-36"
+            onClick={() => router.push(`/${webToon._id}/dashboard`)}
           >
             <img
               alt={`${webToon.title} webtoon image`}
