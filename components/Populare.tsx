@@ -162,7 +162,7 @@ export const Populare = ({ title }: { title: string }) => {
                   <img
                     src={`https://cloud.appwrite.io/v1/storage/buckets/66d40de700345c1e19fc/files/${webToon.coverImage}/view?project=65ab3113d00c39e45407&mode=admin`}
                     alt={webToon.title}
-                    className="h-auto w-auto object-cover transition-all hover:scale-105 aspect-[3/4]"
+                    className="h-80 w-auto object-cover transition-all hover:scale-105 aspect-[3/4]"
                   />
                 </div>
                 <div className="space-y-1 text-sm">
