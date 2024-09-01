@@ -20,7 +20,7 @@ export function WebToonSubNavigator({ children }: { children: React.ReactNode })
             setWebToon(data.data);
             setIsLoading(false)
         })()
-    })
+    },[])
 
     if (isLoading) {
         return <div className="flex w-full h-screen justify-center items-center">

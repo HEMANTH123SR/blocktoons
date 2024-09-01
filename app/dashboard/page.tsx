@@ -36,16 +36,7 @@ const DashBoardPage = () => {
       }
     })();
   }, [user?.id]);
-//   if (somethingWentWrong) {
-//     return (
-//       <div className="flex flex-col items-center justify-center h-screen">
-//         <h1 className="text-4xl font-bold">Something went wrong</h1>
-//         <Button className="mt-4" onClick={() => router.push("/")}>
-//           Go back
-//         </Button>
-//       </div>
-//     );
-//   }
+
   if (!(isLoaded && user)) {
     return (
       <div className="flex flex-col items-center justify-center h-screen">
@@ -78,7 +69,7 @@ const DashBoardPage = () => {
           <div
             key={webToon._id}
             className="flex items-center gap-4 cursor-pointer border mr-36"
-            onClick={() => router.push(`/${webToon._id}/dashboard`)}
+            onClick={() => router.push(`/${webToon._id}/dashboard/chapters`)}
           >
             <img
               alt={`${webToon.title} webtoon image`}
