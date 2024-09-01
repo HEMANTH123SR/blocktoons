@@ -27,76 +27,30 @@ export const TopTenWebToons = () => {
   return (
     <ReactSplide aria-label="Top Ten WebToons">
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/01.png" alt="WebToon 1" />
-        </Link>
+        <img src="/pictures/01.png" alt="WebToon 1" />
       </SplideSlide>
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/02.png" alt="WebToon 2" />
-        </Link>
+        <img src="/pictures/02.png" alt="WebToon 2" />
       </SplideSlide>
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/03.png" alt="WebToon 3" />
-        </Link>
+        <img src="/pictures/03.png" alt="WebToon 3" />
       </SplideSlide>
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/04.png" alt="WebToon 4" />
-        </Link>
+        <img src="/pictures/04.png" alt="WebToon 4" />
       </SplideSlide>
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/05.png" alt="WebToon 5" />
-        </Link>
+        <img src="/pictures/05.png" alt="WebToon 5" />
       </SplideSlide>
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/06.png" alt="WebToon 6" />
-        </Link>
+        <img src="/pictures/06.png" alt="WebToon 6" />
       </SplideSlide>
       <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
-          <img src="/pictures/07.png" alt="WebToon 7" />
-        </Link>
+        <img src="/pictures/07.png" alt="WebToon 7" />
       </SplideSlide>
       {/* <SplideSlide>
-        <Link
-          href={"/"}
-          target="_blank"
-          className="flex cursor-pointer  justify-center items-center border-4 border-black"
-        >
+       
           <img src="/pictures/08.png" alt="WebToon 8" />
-        </Link>
+       
       </SplideSlide> */}
     </ReactSplide>
   );
