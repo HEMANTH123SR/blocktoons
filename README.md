@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/HEMANTH123SR/blocktoons">
-    <img src="https://www.nexusvista.tech/logo%20flash%20(1)_prev_ui.png" alt="Logo" width="80" height="80">
+    <img src="https://i.ibb.co/7jmyrpT/inifinity.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">BlockToons - Diamante Devhub Hackathon</h3>
@@ -39,7 +39,7 @@
 
 ## About The Project
 
-![Screen Shot](./public/images/Screenshot%202024-08-31%20043100.png)
+![Screen Shot](./public/images/Screenshot%202024-09-01%20153058.png)
 
 BloockToons is a blockchain-based platform where users can discover and read the best webtoons from around the world.
 
@@ -49,13 +49,24 @@ Fractional Ownership: The platform introduces fractional ownership of exclusive 
 
 Why Blockchain: BloockToons uses blockchain to enhance transparency and security in content distribution. This ensures that creators are rewarded fairly, and readers have a stake in the content they love.
 
+Problem:-
+
+1. Censorship and Content Control: Centralized platforms often impose content restrictions based on various regional or legal guidelines, limiting creative freedom and access to diverse manga content.
+2. Revenue Sharing: Creators are often subject to unfavorable revenue-sharing models, with significant portions of earnings going to intermediaries like publishers and platforms.
+3. Access and Ownership: Readers do not have ownership of the content they purchase, and access to their library can be revoked at any time due to platform policies or failures.
+4. Single Point of Failure: Centralized platforms can be taken down or suffer outages, leading to a complete loss of access to manga content for readers.
+
+Solution:-
+
+* BlockToons is a decentralized platform leveraging Diamante blockchain technology to provide a fair, transparent, and censorship-resistant environment for manga distribution. The platform operates as a decentralized marketplace where creators can publish, and readers can purchase or access manga directly, without intermediaries.
+
 ## Built With
-
-
 
 * [NEXT JS](https://nextjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
 * [Typescript](https://www.typescriptlang.org/)
+* [DiamCircle](https://diamcircle.com/)
+* [IPFS](https://ipfs.io/)
 * [Diamante Blockchain](https://diamanteblockchain.com/)
 
 ## Getting Started
@@ -84,8 +95,6 @@ This project uses next/font to automatically optimize and load Inter, a custom G
 
 Deployed URL:  https://block-toons.vercel.app/
 
-
-
 ## Usage
 
 Discover Webtoons: Browse and enjoy a wide variety of webtoons from different genres, created by talented artists worldwide.
@@ -95,9 +104,6 @@ Collective Ownership: Fans can co-own premium webtoon series through fractional 
 Invest in Content: Readers can invest in the success of their favorite webtoons, sharing in the growth of their value as the series gains popularity.
 
 Secure Trading: Blockchain technology ensures secure trading and ownership of webtoon assets, making it a trusted platform for both creators and readers.
-
-
-
 
 ## Roadmap
 
@@ -125,9 +131,10 @@ Distributed under the MIT License. See [LICENSE](https://github.com/HEMANTH123SR
 
 ## Authors
 
-* **Hemanth** - *Comp Sci Student* - [Hemanth](https://github.com/HEMANTH123SR) - *Building Frontend and Blockchain Integration*
-* **Kundan** - *Comp Sci. Student* - [Kundan](https://github.com/Kundan730) - *Backend Development*
-* **test** - *Comp Sci. Student* - [test](https://github.com/) - *Building Frontend and presentation*
+* **Hemanth** - *Comp Sci Student* - [Hemanth](https://github.com/HEMANTH123SR) - *Building Frontend and Backend Development*
+* **Anush** - *Comp Sci. Student* - [Anush](https://github.com/Anush-Noob) - *Building Frontend and presentation*
+* **Kundan** - *Comp Sci. Student* - [Kundan](https://github.com/Kundan730) - *Backend Development and Blockchain Integration*
+* **Janavika** - *Comp Sci. Student* - [Janavika](https://github.com/Janavikas) - *Frontend, Building Datasets and presentation*
 
 ## Acknowledgements
 
