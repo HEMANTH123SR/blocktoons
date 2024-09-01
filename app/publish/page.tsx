@@ -32,7 +32,7 @@ const WebToonSchema = z.object({
 type FormValues = z.infer<typeof WebToonSchema>;
 
 const PublishPage = () => {
-  const { user } = useUser();
+  const { user, isLoaded, isSignedIn } = useUser();
   const router = useRouter();
 
   const [formData, setFormData] = useState<FormValues>({
@@ -110,7 +110,7 @@ const PublishPage = () => {
         coverImage: coverImageId,
         backgroundImage: backgroundImageId,
         createdBy: {
-          username: user?.username || "",
+          username: user?.fullName || "",
           email: user?.primaryEmailAddress?.emailAddress || "",
           bio: "",
           profileImage: user?.imageUrl || "",
@@ -134,10 +134,7 @@ const PublishPage = () => {
           isTrending: false,
           lastUpdated: "September 01, 2024",
           chapters: [],
-          createdBy: {
-            username: "hemanth gowda sr",
-            email: "hemanthsrdev@gmail.cpm",
-          },
+          createdBy: webToonData.createdBy,
         }),
       });
 
@@ -160,6 +157,25 @@ const PublishPage = () => {
       setIsSubmitting(false);
     }
   };
+
+  if (!isLoaded) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-primary"></div>
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-4xl font-semibold">
+          You Have Not Signed In. Please sign in first.
+        </h1>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-4xl mx-auto p-6 text-left">
       <h1 className="text-4xl font-bold mb-8 text-[#E85C0D]">
