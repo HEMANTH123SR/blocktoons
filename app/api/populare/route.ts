@@ -8,9 +8,7 @@ export async function GET(request: NextRequest) {
 
     // Fetch the 20 most popular WebToons based on viewCount
     const webToons = await WebToonModule.find({})
-      .sort({ viewCount: -1 }) // Sort by viewCount in descending order
-      .limit(20) // Limit the results to 20 documents
-      .lean(); // Convert Mongoose documents to plain JavaScript objects
+      .sort({ viewCount: -1 }) // Sort by viewCount in descending order // Convert Mongoose documents to plain JavaScript objects
 
     return NextResponse.json(
       { success: true, data: webToons },
