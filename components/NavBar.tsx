@@ -43,17 +43,6 @@ export const HeaderNav = () => {
   const [loading, setLoading] = useState(false);
   const [nftData, setNftData] = useState([]);
 
-  const notify = (message) => {
-    toast.error(message, {
-      position: "top-right",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
-
   const handleWebClick = async () => {
     if (!userAddress) {
       const connectionResp = await window.diam.connect();
