@@ -1,6 +1,5 @@
 import React from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ScrollArea } from "@/components/ui/scroll-area";
 export const WebToonChapterSkelton = () => {
     return (
         <div className="flex flex-col bg-white">
