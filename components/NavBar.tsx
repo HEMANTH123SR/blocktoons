@@ -17,6 +17,13 @@ export const HeaderNav = () => {
   const [webVisible, setWebVisible] = useState(false);
   const [officeVisible, setOfficeVisible] = useState(false);
   const [userAddress, setUserAddress] = useState("");
+  const [webReverse, setWebReverse] = useState(false);
+  const [officeReverse, setOfficeReverse] = useState(false);
+  const [contentVisible, setContentVisible] = useState(false);
+  const [file, setFile] = useState("");
+  const [assetName, setAssetName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [nftData, setNftData] = useState([]);
 
   const handleLogin = () => {
     router.push("/auth/login");
