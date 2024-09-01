@@ -4,42 +4,30 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { krabbyPatty } from "@/lib/fonts/font";
 import { Search } from "lucide-react";
-import { FaWallet } from "react-icons/fa";
-import { redirect, useRouter } from "next/navigation";
-import { create } from "ipfs-http-client";
-import { Buffer } from "buffer";
-import {
-  Asset,
-  Aurora,
-  BASE_FEE,
-  Keypair,
-  Networks,
-  Operation,
-  TransactionBuilder,
-} from "diamnet-sdk";
+import { useRouter } from "next/navigation";
 import { auroraServerUrl, masterSecret } from "../constants/constants";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const HeaderNav = () => {
   const router = useRouter();
-
-  const handleLogin = () => {
-    router.push("/auth/login");
-  };
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Diam wallet integration
+  // Wallet state
   const [webVisible, setWebVisible] = useState(false);
   const [officeVisible, setOfficeVisible] = useState(false);
+  const [userAddress, setUserAddress] = useState("");
   const [webReverse, setWebReverse] = useState(false);
   const [officeReverse, setOfficeReverse] = useState(false);
-  const [userAddress, setUserAddress] = useState("");
   const [contentVisible, setContentVisible] = useState(false);
   const [file, setFile] = useState("");
   const [assetName, setAssetName] = useState("");
   const [loading, setLoading] = useState(false);
   const [nftData, setNftData] = useState([]);
+
+  const handleLogin = () => {
+    router.push("/auth/login");
+  };
 
   const handleWebClick = async () => {
     if (!userAddress) {
@@ -47,11 +35,9 @@ export const HeaderNav = () => {
       setUserAddress(connectionResp.message[0].diamPublicKey);
       setWebVisible(true);
       setOfficeVisible(false);
-      setWebReverse(false);
     } else {
       setWebVisible(true);
       setOfficeVisible(false);
-      setWebReverse(false);
     }
 
     setTimeout(() => {
@@ -131,7 +117,9 @@ export const HeaderNav = () => {
           onClick={handleWebClick}
           className="rounded-lg border text-lg bg-[#E85C0D]  px-2.5 py-1 font-semibold text-white"
         >
-          Connect Wallet
+          {userAddress
+            ? `${userAddress.slice(0, 6)}...${userAddress.slice(-6)}`
+            : "Connect Wallet"}
         </button>
         <div className="hidden md:flex">
           <SignedOut>
