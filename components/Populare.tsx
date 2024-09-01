@@ -19,11 +19,7 @@ export const Populare = ({ title }: { title: string }) => {
   useEffect(() => {
     const fetchWebToons = async () => {
       try {
-<<<<<<< HEAD:components/LandingPageScrollHorizontalComponent.tsx
         const response = await fetch("/api");
-=======
-        const response = await fetch("/api/populare"); 
->>>>>>> f0ef25c707cbbf0f27df9ec83170aed5edb482f7:components/Populare.tsx
         if (!response.ok) {
           throw new Error("Failed to fetch webToons");
         }
@@ -129,7 +125,6 @@ export const Populare = ({ title }: { title: string }) => {
       <ScrollArea className="w-[98vw] whitespace-nowrap rounded-md border">
         <div className="flex w-max space-x-4 p-4">
           {webToons.map((webToon: WebToonInterface) => (
-<<<<<<< HEAD:components/LandingPageScrollHorizontalComponent.tsx
             <div
               key={webToon._id}
               className="w-[250px] space-y-3 cursor-pointer"
@@ -155,31 +150,6 @@ export const Populare = ({ title }: { title: string }) => {
                   <div className="flex items-center gap-1">
                     <Eye size={16} />
                     {webToon.viewCount}
-=======
-            <Link href={`/blocktoon/${webToon._id}`} key={webToon._id}>
-              <div className="w-[250px] space-y-3">
-                <div className="overflow-hidden rounded-md">
-                  <img
-                    src={`https://cloud.appwrite.io/v1/storage/buckets/66d40de700345c1e19fc/files/${webToon.coverImage}/view?project=65ab3113d00c39e45407&mode=admin`}
-                    alt={webToon.title}
-                    className="h-auto w-auto object-cover transition-all hover:scale-105 aspect-[3/4]"
-                  />
-                </div>
-                <div className="space-y-1 text-sm">
-                  <h3 className="font-medium leading-none">{webToon.title}</h3>
-                  <p className="text-xs text-muted-foreground">
-                    {webToon.author}
-                  </p>
-                  <div className="flex gap-2">
-                    <div className="flex items-center gap-1">
-                      <Star size={16} />
-                      {webToon.rating.toFixed(1)}
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Eye size={16} />
-                      {webToon.viewCount}
-                    </div>
->>>>>>> f0ef25c707cbbf0f27df9ec83170aed5edb482f7:components/Populare.tsx
                   </div>
                 </div>
               </div>

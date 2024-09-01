@@ -1,5 +1,5 @@
-import { WebToonInterface } from "@/lib/types";
-export const webToons: WebToonInterface[] = [
+
+export const webToons = [
   {
     likes: {
       likedBy: ["user3", "user4"],

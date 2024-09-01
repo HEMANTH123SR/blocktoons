@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "global.d.ts", ".next/types/**/*.ts", "components/TopTenWebToons.jsx", "components/RecentlyAdded.jsx", "components/NavBar.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "global.d.ts", ".next/types/**/*.ts", "components/TopTenWebToons.jsx", "components/RecentlyAdded.jsx", "components/NavBar.tsx", "testdata/testData.jsx"],
   "exclude": ["node_modules"]
 }
