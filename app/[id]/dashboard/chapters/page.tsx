@@ -151,7 +151,7 @@ export default function ChapterPage() {
             />
 
             <DrawerFooter>
-              <Button onClick={addChapter}>Publish</Button>
+              <Button className="text-white" onClick={addChapter}>Publish</Button>
               <DrawerClose asChild>
                 <Button variant="outline">Cancel</Button>
               </DrawerClose>
