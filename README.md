@@ -64,9 +64,11 @@ Solution:-
 
 * [NEXT JS](https://nextjs.org/)
 * [Tailwind CSS](https://tailwindcss.com/)
-* [Typescript](https://www.typescriptlang.org/)
 * [DiamCircle](https://diamcircle.com/)
+* [MongoDB](https://www.mongodb.com/)
 * [IPFS](https://ipfs.io/)
+* [AppWrite](https://appwrite.io/)
+* [Typescript](https://www.typescriptlang.org/)
 * [Diamante Blockchain](https://diamanteblockchain.com/)
 
 ## Getting Started
