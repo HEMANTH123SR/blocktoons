@@ -4,9 +4,62 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { krabbyPatty } from "@/lib/fonts/font";
 import { Search } from "lucide-react";
+import { FaWallet } from "react-icons/fa";
+import { redirect, useRouter } from 'next/navigation';
+
+import { create } from "ipfs-http-client";
+import { Buffer } from "buffer";
+import {
+  Asset,
+  Aurora,
+  BASE_FEE,
+  Keypair,
+  Networks,
+  Operation,
+  TransactionBuilder,
+} from "diamnet-sdk";
+import { auroraServerUrl, masterSecret } from "../constants/constants";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const HeaderNav = () => {
+  const router = useRouter();
+
+  const handleLogin = () => {
+    router.push('/auth/login');
+  };
   const [isScrolled, setIsScrolled] = useState(false);
+
+  
+  // Diam wallet integration
+  const [webVisible, setWebVisible] = useState(false);
+  const [officeVisible, setOfficeVisible] = useState(false);
+  const [webReverse, setWebReverse] = useState(false);
+  const [officeReverse, setOfficeReverse] = useState(false);
+  const [userAddress, setUserAddress] = useState("");
+  const [contentVisible, setContentVisible] = useState(false);
+  const [file, setFile] = useState("");
+  const [assetName, setAssetName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [nftData, setNftData] = useState([]);
+
+  const handleWebClick = async () => {
+    if (!userAddress) {
+      const connectionResp = await window.diam.connect();
+      setUserAddress(connectionResp.message[0].diamPublicKey);
+      setWebVisible(true);
+      setOfficeVisible(false);
+      setWebReverse(false);
+    } else {
+      setWebVisible(true);
+      setOfficeVisible(false);
+      setWebReverse(false);
+    }
+
+    setTimeout(() => {
+      setContentVisible(true);
+    }, 600);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +70,10 @@ export const HeaderNav = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -28,12 +81,12 @@ export const HeaderNav = () => {
     <header
       className={`sticky top-0 z-50 flex w-full max-w-[1550px] items-center  border-b  justify-between px-3 py-3.5 text-black transition-colors duration-300 md:px-7 ${
         isScrolled
-          ? "border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter"
-          : "bg-white"
+          ? 'border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter'
+          : 'bg-white'
       }`}
     >
       <div className="flex items-center justify-center space-x-8">
-        <Link className="flex items-center justify-center space-x-2" href={"/"}>
+        <Link className="flex items-center justify-center space-x-2" href={'/'}>
           <h1
             className={`${krabbyPatty.className} text-[#E85C0D] cursor-pointer font-semibold text-2xl first-letter:text-4xl`}
           >
@@ -44,25 +97,25 @@ export const HeaderNav = () => {
       <div className="hidden  md:block">
         <div className="flex space-x-5">
           <Link
-            href={"/publish"}
+            href={"/"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Publish
           </Link>
           <Link
-            href={"/"}
+            href={'/'}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Dashboard
           </Link>
           <Link
-            href={"/"}
+            href={'/'}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Random
           </Link>
           <Link
-            href={"/"}
+            href={'/'}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Bookmark
@@ -75,20 +128,22 @@ export const HeaderNav = () => {
           <Search className="text-2xl text-text cursor-pointer" />
         </Link>
         {/* <FaWallet className="text-2xl text-text cursor-pointer"/> */}
-        <Link
-          href={""}
+
+        
+        <button
+          onClick={handleWebClick}
           className="rounded-lg border text-lg bg-[#E85C0D]  px-2.5 py-1 font-semibold text-white"
         >
           Connect Wallet
-        </Link>
+        </button>
         <div className="hidden md:flex">
           <SignedOut>
-            <Link
-              href={""}
+            <button
+              onClick={handleLogin}
               className="rounded-lg border text-lg bg-white px-2.5 py-1 font-semibold text-black"
             >
               Sign In
-            </Link>
+            </button>
           </SignedOut>
           <SignedIn>
             <UserButton />
