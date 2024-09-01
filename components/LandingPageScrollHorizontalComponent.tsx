@@ -5,7 +5,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Star, Eye } from "lucide-react";
 import { WebToonInterface } from "@/testdata/cardP";
 import { krabbyPatty } from "@/lib/fonts/font";
-import Loader from "@/components/Loader/Loader"; // Assuming you have a loader component
+import Loader from "@/components/Loader/Loader";
 import { Aurora, BASE_FEE, Keypair, Networks, Operation, TransactionBuilder } from "diamnet-sdk";
 import { auroraServerUrl, masterSecret } from "@/constants/constants";
 
@@ -19,7 +19,7 @@ export const WebtoonScrollComponent = ({ title }: { title: string }) => {
   useEffect(() => {
     const fetchWebToons = async () => {
       try {
-        const response = await fetch("/api"); // Adjust this URL to match your API route
+        const response = await fetch("/api");
         if (!response.ok) {
           throw new Error("Failed to fetch webToons");
         }
