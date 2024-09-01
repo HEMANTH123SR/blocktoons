@@ -1,4 +1,6 @@
-export const MangaChapterSkeleton = () => {
+import React from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+export const WebToonChapterSkelton = () => {
     return (
         <div className="flex flex-col bg-white">
             <div className="h-10 w-full bg-primary flex justify-between  px-6 ">

@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Chapter } from "@/lib/types";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
-import { MangaChapterSkeleton } from "@/components/component/Skelton";
-import { SkipBack, SkipForward } from 'lucide-react';
+import { WebToonChapterSkelton } from "@/components/WebToonChapterSkelton";
+import { SkipBack, SkipForward } from "lucide-react";
 import { toast } from "sonner";
 
 const ChapterPage = ({
-  params
+  params,
 }: {
   params: { chapterid: string; id: string };
 }) => {
@@ -20,7 +20,7 @@ const ChapterPage = ({
   const [prevChapterId, setPrevChapterId] = useState<string | undefined>("");
   useEffect(() => {
     (async () => {
-      const res = await fetch("/api/manga/" + params.id);
+      const res = await fetch(`/api/webtoons?id=${params.id}`);
       const data = await res.json();
       if (data.status !== "success") {
         setSomethingWentFrong(true);
@@ -49,18 +49,14 @@ const ChapterPage = ({
     );
   }
   if (isLoading) {
-    return (
-      <MangaChapterSkeleton />
-    )
+    return <WebToonChapterSkelton />;
   }
   return (
     <div className="h-full w-full">
       <div className="h-10 w-full bg-primary flex justify-between  px-6">
         <div className="flex space-x-2 items-center">
           <span className="text-white font-mono">{`#${chapterState?.chapterNumber}`}</span>
-          <span className="font-sans text-white">
-            {chapterState?.chapterName}
-          </span>
+          <span className="font-sans text-white">{chapterState?.title}</span>
         </div>
         <div className="flex space-x-6 items-center">
           <div
@@ -74,7 +70,7 @@ const ChapterPage = ({
                 description: "Sunday, December 03, 2023 at 9:00 AM",
                 action: {
                   label: "Cancel",
-                  onClick: () => { },
+                  onClick: () => {},
                 },
               });
             }}
@@ -84,7 +80,9 @@ const ChapterPage = ({
               Page
             </span>
           </div>
-          <span className="rounded-full text-primary bg-white h-6 w-6 text-center">{chapterState?.chapterNumber}</span>
+          <span className="rounded-full text-primary bg-white h-6 w-6 text-center">
+            {chapterState?.chapterNumber}
+          </span>
           <div
             className="flex space-x-1 items-center justify-center cursor-pointer"
             onClick={() => {
@@ -96,7 +94,7 @@ const ChapterPage = ({
                 description: "Sunday, December 03, 2023 at 9:00 AM",
                 action: {
                   label: "Cancel",
-                  onClick: () => { },
+                  onClick: () => {},
                 },
               });
             }}
@@ -105,22 +103,22 @@ const ChapterPage = ({
               Page
             </span>
             <SkipForward className="text-white" />
-
           </div>
         </div>
       </div>
       <ScrollArea className="h-full w-full min-h-[70vh]">
         <div className="h-full w-full flex flex-col items-center justify-center my-10">
-          {chapterState?.chapterImages.map((imageId: string) => {
-            return (
-              <img
-                src={`https://cloud.appwrite.io/v1/storage/buckets/65ab31d194c87473caab/files/${imageId}/view?project=65ab3113d00c39e45407&mode=admin`}
-                alt="chapter"
-                key={imageId}
-                className="w-11/12 h-full object-cover"
-              />
-            );
-          })}
+          {chapterState?.imageUrls &&
+            chapterState?.imageUrls.map((imageId: string) => {
+              return (
+                <img
+                  src={`https://cloud.appwrite.io/v1/storage/buckets/66d40de700345c1e19fc/files/${imageId}/view?project=65ab3113d00c39e45407&mode=admin`}
+                  alt="chapter"
+                  key={imageId}
+                  className="w-11/12 h-full object-cover"
+                />
+              );
+            })}
           <ScrollBar orientation="horizontal" />
         </div>
       </ScrollArea>
