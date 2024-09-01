@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-100  border-t-4 border-[#62C9C3]">
+    <footer className="bg-gray-100  border-t-4 border-[#E85C0D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -20,7 +20,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/publish"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Publish
                 </Link>
@@ -28,7 +28,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/dashboard"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Dashboard
                 </Link>
@@ -36,7 +36,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/random"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Random
                 </Link>
@@ -44,7 +44,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/bookmark"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Bookmark
                 </Link>
@@ -59,7 +59,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/terms"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Terms of Service
                 </Link>
@@ -67,7 +67,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Privacy Policy
                 </Link>
@@ -82,7 +82,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Twitter
                 </a>
@@ -90,7 +90,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Discord
                 </a>
@@ -98,7 +98,7 @@ export const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="text-sm text-gray-600 hover:text-[#62C9C3]"
+                  className="text-sm text-gray-600 hover:text-[#E85C0D]"
                 >
                   Telegram
                 </a>
@@ -111,7 +111,7 @@ export const Footer = () => {
             &copy; 2024 BlockToons. All rights reserved.
           </p>
           <div className="mt-2">
-            <button className="bg-[#62C9C3] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#55b1ab]">
+            <button className="bg-[#E85C0D] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#55b1ab]">
               Connect Wallet
             </button>
           </div>

@@ -16,3 +16,5 @@ export const krabbyPatty = localFont({
   display: "swap",
   weight: "600",
 });
+
+

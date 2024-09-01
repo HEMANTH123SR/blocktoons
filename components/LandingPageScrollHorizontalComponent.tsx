@@ -41,7 +41,7 @@ export const WebtoonScrollComponent = ({ title }: { title: string }) => {
   return (
     <div>
       <h2 className={krabbyPatty.className}>{title}</h2>
-      <ScrollArea className="w-full whitespace-nowrap rounded-md border">
+      <ScrollArea className="w-[98vw] whitespace-nowrap rounded-md border">
         <div className="flex w-max space-x-4 p-4">
           {webToons.map((webToon: WebToonInterface) => (
             <Link href={`/blocktoon/${webToon._id}`} key={webToon._id}>
@@ -70,16 +70,6 @@ export const WebtoonScrollComponent = ({ title }: { title: string }) => {
                   </div>
                 </div>
               </div>
-              {webToon.isNew && (
-                <Badge variant="secondary" className="absolute top-2 left-2">
-                  New
-                </Badge>
-              )}
-              {webToon.isTrending && (
-                <Badge variant="secondary" className="absolute top-2 right-2">
-                  Trending
-                </Badge>
-              )}
             </Link>
           ))}
         </div>
