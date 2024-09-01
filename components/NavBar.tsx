@@ -7,6 +7,21 @@ import { Search } from "lucide-react";
 import { FaWallet } from "react-icons/fa";
 import { redirect, useRouter } from 'next/navigation';
 
+import { create } from "ipfs-http-client";
+import { Buffer } from "buffer";
+import {
+  Asset,
+  Aurora,
+  BASE_FEE,
+  Keypair,
+  Networks,
+  Operation,
+  TransactionBuilder,
+} from "diamnet-sdk";
+import { auroraServerUrl, masterSecret } from "../constants/constants";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export const HeaderNav = () => {
   const router = useRouter();
 
@@ -14,6 +29,48 @@ export const HeaderNav = () => {
     router.push('/auth/login');
   };
   const [isScrolled, setIsScrolled] = useState(false);
+
+  
+  // Diam wallet integration
+  const [webVisible, setWebVisible] = useState(false);
+  const [officeVisible, setOfficeVisible] = useState(false);
+  const [webReverse, setWebReverse] = useState(false);
+  const [officeReverse, setOfficeReverse] = useState(false);
+  const [userAddress, setUserAddress] = useState("");
+  const [contentVisible, setContentVisible] = useState(false);
+  const [file, setFile] = useState("");
+  const [assetName, setAssetName] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [nftData, setNftData] = useState([]);
+
+  const notify = (message) => {
+    toast.error(message, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  const handleWebClick = async () => {
+    if (!userAddress) {
+      const connectionResp = await window.diam.connect();
+      setUserAddress(connectionResp.message[0].diamPublicKey);
+      setWebVisible(true);
+      setOfficeVisible(false);
+      setWebReverse(false);
+    } else {
+      setWebVisible(true);
+      setOfficeVisible(false);
+      setWebReverse(false);
+    }
+
+    setTimeout(() => {
+      setContentVisible(true);
+    }, 600);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,12 +139,14 @@ export const HeaderNav = () => {
           <Search className="text-2xl text-text cursor-pointer" />
         </Link>
         {/* <FaWallet className="text-2xl text-text cursor-pointer"/> */}
-        <Link
-          href={""}
+
+        
+        <button
+          onClick={handleWebClick}
           className="rounded-lg border text-lg bg-[#E85C0D]  px-2.5 py-1 font-semibold text-white"
         >
           Connect Wallet
-        </Link>
+        </button>
         <div className="hidden md:flex">
           <SignedOut>
             <button
