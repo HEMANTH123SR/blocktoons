@@ -10,8 +10,9 @@ import { toast } from "sonner";
 const ChapterPage = ({
   params,
 }: {
-  params: { chapterid: string; id: string };
+  params: { chapterid: string | number; id: string };
 }) => {
+
   const router = useRouter();
   const [chapterState, setChapterState] = useState<Chapter>();
   const [somethingWentFrong, setSomethingWentFrong] = useState(false);
@@ -22,23 +23,22 @@ const ChapterPage = ({
     (async () => {
       const res = await fetch(`/api/webtoons?id=${params.id}`);
       const data = await res.json();
-      if (data.status !== "success") {
+
+      
+      if (!res.ok) {
         setSomethingWentFrong(true);
         return;
       }
-      for (let i = 0; i < data.data.chapters.length; i++) {
-        if (params.chapterid === data.data.chapters[i]._id) {
-          setChapterState(data.data.chapters[i]);
-          setNextChapterId(data.data.chapters[i + 1]?._id);
-          setPrevChapterId(data.data.chapters[i - 1]?._id);
-          setIsLoading(false);
-          break;
-        }
-        if (i === data.data.chapters.length - 1) {
-          setSomethingWentFrong(true);
-          break;
-        }
+      if (res.ok) {
+        console.log("data recived data", data.data.chapters[0]);
+        console.log("params chapter id", params.chapterid);
+        console.log("user id");
+        setChapterState(data.data.chapters[Number(params.chapterid)]);
+        // setNextChapterId(data.data.chapters[params.chapterid]._id);
+        // setPrevChapterId(data.data.chapters[Number(params.chapterid) - 2]._id);
+        setIsLoading(false);
       }
+  
     })();
   }, []);
   if (somethingWentFrong) {
@@ -55,7 +55,7 @@ const ChapterPage = ({
     <div className="h-full w-full">
       <div className="h-10 w-full bg-primary flex justify-between  px-6">
         <div className="flex space-x-2 items-center">
-          <span className="text-white font-mono">{`#${chapterState?.chapterNumber}`}</span>
+          <span className="text-white font-mono">{`#${chapterState?.title}`}</span>
           <span className="font-sans text-white">{chapterState?.title}</span>
         </div>
         <div className="flex space-x-6 items-center">

@@ -113,12 +113,12 @@ const Page: React.FC<PageProps> = ({ params }) => {
       <ScrollArea className="px-16">
         <div className="flex flex-col space-y-6  px-4 lg:px-8 h-96">
           {webToon.chapters.length &&
-            webToon.chapters.map((chapter) => (
+            webToon.chapters.map((chapter,i) => (
               <div
                 className="flex items-center space-x-8 cursor-pointer"
                 key={chapter._id}
                 onClick={() =>
-                  router.push(`${webToon.title}/chapter/${chapter._id}`)
+                  router.push(`${webToon._id}/chapter/${i+1}`)
                 }
               >
                 <img
