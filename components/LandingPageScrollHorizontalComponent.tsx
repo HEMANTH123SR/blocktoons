@@ -6,7 +6,7 @@ import { Star, Eye } from "lucide-react";
 import { WebToonInterface } from "@/testdata/cardP";
 import { krabbyPatty } from "@/lib/fonts/font";
 import Loader from "@/components/Loader/Loader";
-import { Aurora, BASE_FEE, Keypair, Networks, Operation, TransactionBuilder } from "diamnet-sdk";
+import { Asset, Aurora, BASE_FEE, Keypair, Networks, Operation, TransactionBuilder } from "diamnet-sdk";
 import { auroraServerUrl, masterSecret } from "@/constants/constants";
 
 export const WebtoonScrollComponent = ({ title }: { title: string }) => {
@@ -106,10 +106,10 @@ export const WebtoonScrollComponent = ({ title }: { title: string }) => {
 
       tx.sign(masterKeypair, issuerKeypair);
 
-      const xdr = tx.toXDR();
-      const signResponse = await window.diam.sign(xdr, true, Networks.TESTNET);
+      // Manually submit the transaction
+      const result = await server.submitTransaction(tx);
 
-      return signResponse.response.status === 200;
+      return result; // Return true if successful
     } catch (e) {
       console.error("Transaction initiation failed:", e);
       return false;
