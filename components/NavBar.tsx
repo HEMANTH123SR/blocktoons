@@ -87,7 +87,7 @@ export const HeaderNav = () => {
             Publish
           </Link>
           <Link
-            href={"/"}
+            href={"/dashboard"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Dashboard
