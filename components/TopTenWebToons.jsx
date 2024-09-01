@@ -27,25 +27,39 @@ export const TopTenWebToons = () => {
   return (
     <ReactSplide aria-label="Top Ten WebToons">
       <SplideSlide>
-        <img src="/pictures/01.png" alt="WebToon 1" />
+       
+          <img src="/pictures/01.png" alt="WebToon 1" />
+       
       </SplideSlide>
       <SplideSlide>
-        <img src="/pictures/02.png" alt="WebToon 2" />
+       
+          <img src="/pictures/02.png" alt="WebToon 2" />
+       
       </SplideSlide>
       <SplideSlide>
-        <img src="/pictures/03.png" alt="WebToon 3" />
+       
+          <img src="/pictures/03.png" alt="WebToon 3" />
+       
       </SplideSlide>
       <SplideSlide>
-        <img src="/pictures/04.png" alt="WebToon 4" />
+       
+          <img src="/pictures/04.png" alt="WebToon 4" />
+       
       </SplideSlide>
       <SplideSlide>
-        <img src="/pictures/05.png" alt="WebToon 5" />
+       
+          <img src="/pictures/05.png" alt="WebToon 5" />
+       
       </SplideSlide>
       <SplideSlide>
-        <img src="/pictures/06.png" alt="WebToon 6" />
+       
+          <img src="/pictures/06.png" alt="WebToon 6" />
+       
       </SplideSlide>
       <SplideSlide>
-        <img src="/pictures/07.png" alt="WebToon 7" />
+       
+          <img src="/pictures/07.png" alt="WebToon 7" />
+       
       </SplideSlide>
       {/* <SplideSlide>
        

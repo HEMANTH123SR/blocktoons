@@ -15,7 +15,7 @@ export const Recents = ({ title }: { title: string }) => {
   useEffect(() => {
     const fetchWebToons = async () => {
       try {
-        const response = await fetch("/api/recents"); // Adjust this URL to match your API route
+        const response = await fetch("/api"); // Adjust this URL to match your API route
         if (!response.ok) {
           throw new Error("Failed to fetch webToons");
         }
@@ -45,12 +45,12 @@ export const Recents = ({ title }: { title: string }) => {
         <div className="flex w-max space-x-4 p-4">
           {webToons.map((webToon: WebToonInterface) => (
             <Link href={`/blocktoon/${webToon._id}`} key={webToon._id}>
-              <div className="w-[250px] space-y-3">
+              <div className="w-[250px] max-w-[250px]  space-y-3">
                 <div className="overflow-hidden rounded-md">
                   <img
                     src={`https://cloud.appwrite.io/v1/storage/buckets/66d40de700345c1e19fc/files/${webToon.coverImage}/view?project=65ab3113d00c39e45407&mode=admin`}
                     alt={webToon.title}
-                    className="h-auto w-auto object-cover transition-all hover:scale-105 aspect-[3/4]"
+                    className="h-80 w-auto object-cover transition-all hover:scale-105 aspect-[3/4]"
                   />
                 </div>
                 <div className="space-y-1 text-sm">
