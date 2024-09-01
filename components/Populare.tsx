@@ -8,6 +8,8 @@ import { krabbyPatty } from "@/lib/fonts/font";
 import Loader from "@/components/Loader/Loader";
 import { Asset, Aurora, BASE_FEE, Keypair, Networks, Operation, TransactionBuilder } from "diamnet-sdk";
 import { auroraServerUrl, masterSecret } from "@/constants/constants";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Populare = ({ title }: { title: string }) => {
   const [webToons, setWebToons] = useState<WebToonInterface[]>([]);
@@ -46,13 +48,16 @@ export const Populare = ({ title }: { title: string }) => {
       const transactionSuccess = await initiateTransaction(userAddress);
 
       if (transactionSuccess) {
-        router.push(`/blocktoon/${webToon._id}`);
+        toast.success("Transaction successful! Redirecting...");
+        setTimeout(() => {
+          router.push(`/blocktoon/${webToon._id}`);
+        }, 2000); // Give user time to see the success message
       } else {
-        alert("Transaction failed, please try again.");
+        toast.error("Transaction failed, please try again.");
       }
     } catch (err) {
       console.error("Transaction error:", err);
-      alert("An error occurred during the transaction.");
+      toast.error("An error occurred during the transaction.");
     } finally {
       setTransactionLoading(false);
     }
@@ -127,7 +132,7 @@ export const Populare = ({ title }: { title: string }) => {
           {webToons.map((webToon: WebToonInterface) => (
             <div
               key={webToon._id}
-              className="w-[250px] space-y-3 cursor-pointer"
+              className={`w-[250px] space-y-3 cursor-pointer ${transactionLoading ? 'pointer-events-none opacity-50' : ''}`}
               onClick={() => handleWebtoonClick(webToon)}
             >
               <div className="overflow-hidden rounded-md">
@@ -159,6 +164,7 @@ export const Populare = ({ title }: { title: string }) => {
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
       {transactionLoading && <Loader />} {/* Show loading spinner during transaction */}
+      <ToastContainer /> {/* Toast container */}
     </div>
   );
 };
