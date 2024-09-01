@@ -132,9 +132,9 @@ Distributed under the MIT License. See [LICENSE](https://github.com/HEMANTH123SR
 ## Authors
 
 * **Hemanth** - *Comp Sci Student* - [Hemanth](https://github.com/HEMANTH123SR) - *Building Frontend and Backend Development*
-* **Anush** - *Comp Sci. Student* - [test](https://github.com/Anush-Noob) - *Building Frontend and presentation*
+* **Anush** - *Comp Sci. Student* - [Anush](https://github.com/Anush-Noob) - *Building Frontend and presentation*
 * **Kundan** - *Comp Sci. Student* - [Kundan](https://github.com/Kundan730) - *Backend Development and Blockchain Integration*
-* **Janavika** - *Comp Sci. Student* - [test](https://github.com/Janavikas) - *Frontend, Building Datasets and presentation*
+* **Janavika** - *Comp Sci. Student* - [Janavika](https://github.com/Janavikas) - *Frontend, Building Datasets and presentation*
 
 ## Acknowledgements
 
