@@ -1,7 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 import { connectDB } from "@/db/index";
 import { WebToonModule } from "@/db/webtoon.module";
-import mongoose from "mongoose";
 export async function POST(request: NextRequest) {
   try {
     await connectDB();
@@ -21,6 +20,9 @@ export async function POST(request: NextRequest) {
       chapters,
       createdBy,
     } = body;
+
+
+    console.log("the data recived is ",body);
 
     const newWebToon = new WebToonModule({
       title,

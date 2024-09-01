@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import { krabbyPatty } from "@/lib/fonts/font";
 import { Search } from "lucide-react";
 import { FaWallet } from "react-icons/fa";
-import { redirect, useRouter } from 'next/navigation';
-
+import { redirect, useRouter } from "next/navigation";
 import { create } from "ipfs-http-client";
 import { Buffer } from "buffer";
 import {
@@ -26,11 +25,10 @@ export const HeaderNav = () => {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push('/auth/login');
+    router.push("/auth/login");
   };
   const [isScrolled, setIsScrolled] = useState(false);
 
-  
   // Diam wallet integration
   const [webVisible, setWebVisible] = useState(false);
   const [officeVisible, setOfficeVisible] = useState(false);
@@ -70,10 +68,10 @@ export const HeaderNav = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -81,12 +79,12 @@ export const HeaderNav = () => {
     <header
       className={`sticky top-0 z-50 flex w-full max-w-[1550px] items-center  border-b  justify-between px-3 py-3.5 text-black transition-colors duration-300 md:px-7 ${
         isScrolled
-          ? 'border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter'
-          : 'bg-white'
+          ? "border-b bg-white bg-opacity-70 backdrop-blur-md backdrop-filter"
+          : "bg-white"
       }`}
     >
       <div className="flex items-center justify-center space-x-8">
-        <Link className="flex items-center justify-center space-x-2" href={'/'}>
+        <Link className="flex items-center justify-center space-x-2" href={"/"}>
           <h1
             className={`${krabbyPatty.className} text-[#E85C0D] cursor-pointer font-semibold text-2xl first-letter:text-4xl`}
           >
@@ -97,25 +95,25 @@ export const HeaderNav = () => {
       <div className="hidden  md:block">
         <div className="flex space-x-5">
           <Link
-            href={"/"}
+            href={"/publish"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Publish
           </Link>
           <Link
-            href={'/'}
+            href={"/"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Dashboard
           </Link>
           <Link
-            href={'/'}
+            href={"/"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Random
           </Link>
           <Link
-            href={'/'}
+            href={"/"}
             className="rounded-md px-4 py-2.5  font-semibold text-[#868686] hover:bg-slate-50"
           >
             Bookmark
@@ -129,7 +127,6 @@ export const HeaderNav = () => {
         </Link>
         {/* <FaWallet className="text-2xl text-text cursor-pointer"/> */}
 
-        
         <button
           onClick={handleWebClick}
           className="rounded-lg border text-lg bg-[#E85C0D]  px-2.5 py-1 font-semibold text-white"
