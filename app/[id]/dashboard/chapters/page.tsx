@@ -25,6 +25,7 @@ export default function ChapterPage() {
   const pathname = usePathname();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const id = pathname?.split("/")[1];
+  
 
   const [chapters, setChapters] = useState<Chapter[]>([]);
   const [chapterName, setChapterName] = useState<string>("");
