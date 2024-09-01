@@ -125,7 +125,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
                   alt={chapter.title}
                   className="h-[100px] w-[100px] object-cover"
                   height="100"
-                  src={chapter.imageUrls[0]}
+                  src={`https://cloud.appwrite.io/v1/storage/buckets/66d40de700345c1e19fc/files/${chapter.imageUrls[0]}/view?project=65ab3113d00c39e45407&mode=admin`}
                   style={{
                     aspectRatio: "100/100",
                     objectFit: "cover",
@@ -175,7 +175,7 @@ type CoverImageProps = {
 const CoverImage: React.FC<CoverImageProps> = ({ src, title }) => (
   <div className="w-full md:w-1/3 lg:w-1/4">
     <img
-      src={src}
+      src={`https://cloud.appwrite.io/v1/storage/buckets/66d40de700345c1e19fc/files/${src}/view?project=65ab3113d00c39e45407&mode=admin`}
       alt={`${title} cover`}
       className="w-full rounded-lg shadow-lg"
       style={{ aspectRatio: "2/3", objectFit: "cover" }}
