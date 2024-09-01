@@ -21,7 +21,7 @@ export const Populare = ({ title }: { title: string }) => {
   useEffect(() => {
     const fetchWebToons = async () => {
       try {
-        const response = await fetch("/api/");
+        const response = await fetch("/api/populare");
         if (!response.ok) {
           throw new Error("Failed to fetch webToons");
         }
