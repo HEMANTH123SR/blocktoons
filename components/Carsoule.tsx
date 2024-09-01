@@ -13,7 +13,7 @@ import { webToons as webToonsIntialData } from "@/testdata/testData";
 
 export function SpotLightCarsoul() {
   const [webToonsSpotLight, setWebToonsSpotlight] =
-    useState<WebToonInterface[]>(webToonsIntialData);
+    useState<any[]>(webToonsIntialData);
 
   return (
     <Carousel className="w-screen  ">

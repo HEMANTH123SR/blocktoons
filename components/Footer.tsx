@@ -160,7 +160,9 @@ export const Footer = () => {
             <button
             onClick={handleWebClick}
             className="bg-[#E85C0D] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#55b1ab]">
-              Connect Wallet
+              {userAddress
+            ? `${userAddress.slice(0, 6)}...${userAddress.slice(-6)}`
+            : "Connect Wallet"}
             </button>
           </div>
           <p className="text-sm text-gray-600">
