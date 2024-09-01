@@ -2,13 +2,12 @@ import { NextResponse, NextRequest } from "next/server";
 import { connectDB } from "@/db/index";
 import { WebToonModule } from "@/db/webtoon.module";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     await connectDB();
 
     // Fetch the first 20 most recent WebToons
     const webToons = await WebToonModule.find({})
-      .sort({ lastUpdated: -1 }) // Sort by lastUpdated in descending order
       .limit(20) // Limit the results to 20 documents
       .lean(); // Convert Mongoose documents to plain JavaScript objects
 
