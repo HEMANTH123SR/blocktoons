@@ -69,9 +69,9 @@ export function DropZone({ multipleImage, setImage, setMultipleImage }: { multip
       <div {...getRootProps({ className: className })}>
         <input {...getInputProps()} />
         {isDragActive ? (
-          <p className="text-center text-xs lg:text-base text-primary">Drop the files here ...</p>
+          <p className="text-center text-xs lg:text-base text-[#E85C0D]">Drop the files here ...</p>
         ) : (
-          <p className="text-center text-xs lg:text-base text-primary">{`Drag 'n' drop image here, or click here`}</p>
+          <p className="text-center text-xs lg:text-base text-[#E85C0D]">{`Drag 'n' drop image here, or click here`}</p>
         )}
       </div>
 

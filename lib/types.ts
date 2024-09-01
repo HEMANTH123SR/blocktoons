@@ -1,12 +1,14 @@
 
+export interface Chapter {
+  chapterNumber: number;
+  title: string;
+  publishedDate: string;
+  imageCount: number;
+  imageUrls?: string[];  // Optional property
+}
 
-export type Chapter = {
-    chapterName: string;
-    chapterImages: string[];
-    chapterPublishedDate: string;
-    chapterNumber: number;
-    _id?: string;
-  };
+
+
   
   export type UserType = {
     userName: String;

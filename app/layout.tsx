@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 
 import { Apercu } from "@/lib/fonts/font";
 import "./globals.css";
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import { HeaderNav } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
@@ -10,6 +16,7 @@ export const metadata: Metadata = {
   description:
     "Read exclusive chapters with secure blockchain transactions. Pay for what you read, seamlessly and securely.",
 };
+import { Toaster } from "@/components/ui/sonner"
 
 export default function RootLayout({
   children,
@@ -22,7 +29,8 @@ export default function RootLayout({
         <body className={`${Apercu.className} overflow-x-hidden h-full`}>
           <HeaderNav />
           {children}
-          <Footer/>
+          <Footer />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

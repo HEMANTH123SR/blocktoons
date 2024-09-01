@@ -2,6 +2,58 @@ import { WebToonInterface } from "@/lib/types";
 export const webToons: WebToonInterface[] = [
   {
     likes: {
+      likedBy: ["user3", "user4"],
+      likeCount: 2,
+    },
+    _id: "3",
+    webToonName: "Space Explorers",
+    author: "Sam Lee",
+    backgroundImage: "background3.jpg",
+    coverImage: "/path/to/image3.png",
+    tags: "sci-fi, adventure",
+    status: "Ongoing",
+    description:
+      "Journey through the cosmos with the brave Space Explorers. lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret",
+    views: {
+      count: 1800,
+      viewedBy: ["user2", "user3", "user6"],
+    },
+    reviews: [
+      {
+        review: 5,
+        reviewBy: "user5",
+      },
+    ],
+    comments: [
+      {
+        comment: "Out of this world!",
+        commentBy: "user4",
+        createdAt: new Date("2024-07-22"),
+      },
+    ],
+    thanksReceives: [{ userId: "user3", amount: 15 }],
+    savedBy: ["user4", "user5"],
+    chapters: [
+      {
+        chapterName: "To the Stars",
+        chapterImages: ["chapter3_img1.jpg", "chapter3_img2.jpg"],
+        chapterPublishedDate: "2024-07-11",
+        chapterNumber: 1,
+      },
+    ],
+    createdAt: "2024-07-02",
+    updatedAt: "2024-08-02",
+    createdBy: {
+      userName: "Sam Lee",
+      userEmail: "sam@example.com",
+      userBio: "Aspiring astronaut.",
+      userId: "user3",
+      UserProfileImage: "profile3.jpg",
+    },
+    __v: 0,
+  },
+  {
+    likes: {
       likedBy: ["user1", "user2"],
       likeCount: 2,
     },
@@ -64,7 +116,8 @@ export const webToons: WebToonInterface[] = [
     coverImage: "/path/to/image2.png",
     tags: "fantasy, action",
     status: "Completed",
-    description: "A tale of a hero's rise to become the Dragon King lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret.",
+    description:
+      "A tale of a hero's rise to become the Dragon King lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret.",
     views: {
       count: 2000,
       viewedBy: ["user4", "user5", "user6"],
@@ -103,57 +156,7 @@ export const webToons: WebToonInterface[] = [
     },
     __v: 0,
   },
-  {
-    likes: {
-      likedBy: ["user3", "user4"],
-      likeCount: 2,
-    },
-    _id: "3",
-    webToonName: "Space Explorers",
-    author: "Sam Lee",
-    backgroundImage: "background3.jpg",
-    coverImage: "/path/to/image3.png",
-    tags: "sci-fi, adventure",
-    status: "Ongoing",
-    description: "Journey through the cosmos with the brave Space Explorers. lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret",
-    views: {
-      count: 1800,
-      viewedBy: ["user2", "user3", "user6"],
-    },
-    reviews: [
-      {
-        review: 5,
-        reviewBy: "user5",
-      },
-    ],
-    comments: [
-      {
-        comment: "Out of this world!",
-        commentBy: "user4",
-        createdAt: new Date("2024-07-22"),
-      },
-    ],
-    thanksReceives: [{ userId: "user3", amount: 15 }],
-    savedBy: ["user4", "user5"],
-    chapters: [
-      {
-        chapterName: "To the Stars",
-        chapterImages: ["chapter3_img1.jpg", "chapter3_img2.jpg"],
-        chapterPublishedDate: "2024-07-11",
-        chapterNumber: 1,
-      },
-    ],
-    createdAt: "2024-07-02",
-    updatedAt: "2024-08-02",
-    createdBy: {
-      userName: "Sam Lee",
-      userEmail: "sam@example.com",
-      userBio: "Aspiring astronaut.",
-      userId: "user3",
-      UserProfileImage: "profile3.jpg",
-    },
-    __v: 0,
-  },
+
   {
     likes: {
       likedBy: ["user1", "user4"],
@@ -166,7 +169,8 @@ export const webToons: WebToonInterface[] = [
     coverImage: "/path/to/image4.png",
     tags: "romance, supernatural",
     status: "Ongoing",
-    description: "A forbidden love between a human and a vampire. lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret",
+    description:
+      "A forbidden love between a human and a vampire. lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret",
     views: {
       count: 2200,
       viewedBy: ["user1", "user4", "user5"],
@@ -218,7 +222,8 @@ export const webToons: WebToonInterface[] = [
 
     tags: "cyberpunk, thriller",
     status: "Ongoing",
-    description: "A futuristic city where secrets lurk in the shadows lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret.",
+    description:
+      "A futuristic city where secrets lurk in the shadows lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret.",
     views: {
       count: 2500,
       viewedBy: ["user1", "user3", "user4"],
@@ -269,7 +274,8 @@ export const webToons: WebToonInterface[] = [
     coverImage: "/path/to/image6.jpg",
     tags: "action, martial arts",
     status: "Completed",
-    description: "Follow the journey of a young ninja mastering his skills. lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret",
+    description:
+      "Follow the journey of a young ninja mastering his skills. lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret",
     views: {
       count: 3000,
       viewedBy: ["user2", "user3", "user6"],
@@ -320,7 +326,8 @@ export const webToons: WebToonInterface[] = [
     coverImage: "/path/to/image7.png",
     tags: "fantasy, drama",
     status: "Ongoing",
-    description: "A young girl destined to protect the ancient forest lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret.",
+    description:
+      "A young girl destined to protect the ancient forest lo Leveling follows Sung Jin-Woo, an E-rank hunter in a world where portals connect Earth to dangerous dungeons filled with monsters. After barely surviving a deadly double dungeon, Jin-Woo discovers a mysterious system that grants him the ability to level up infinitely, something unheard of in the hunter world. As he grows stronger, he transforms from the weakest hunter into a force capable of taking on the world's most powerful beings, uncovering dark secret.",
     views: {
       count: 1700,
       viewedBy: ["user4", "user5", "user6"],

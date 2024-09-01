@@ -46,8 +46,8 @@ export function WebToonSubNavigator({ children }: { children: React.ReactNode })
                                 className={`mb-4 block  py-2 px-4 text-left text-sm font-medium text-gray-700
               
                 ${pathname === `/${id}/dashboard/webtoon-details`
-                                        ? "bg-primary text-white hover:bg-primary "
-                                        : "bg-white hover:bg-slate-100 hover:text-black"
+                                        ? "bg-[#E85C0D] border text-white hover:bg-primary "
+                                        : "bg-white border hover:bg-slate-100 hover:text-black"
                                     } `}
                                 onClick={() => router.push(`/${id}/dashboard/webtoon-details`)}
                             >
@@ -57,7 +57,7 @@ export function WebToonSubNavigator({ children }: { children: React.ReactNode })
                                 className={`mb-4 block  py-2 px-4 text-left text-sm font-medium text-gray-700
               
                  ${pathname === `/${id}/dashboard/chapters`
-                                        ? "bg-primary text-white hover:bg-primary "
+                                        ? "bg-[#E85C0D] text-white hover:bg-primary "
                                         : "bg-white hover:bg-slate-100 hover:text-black"
                                     } `}
                                 onClick={() => router.push(`/${id}/dashboard/chapters`)}
@@ -70,8 +70,8 @@ export function WebToonSubNavigator({ children }: { children: React.ReactNode })
                                 className={`mb-4 block  py-2 px-4 text-left text-sm font-medium text-gray-700
             
                ${pathname === `/${id}/dashboard/webtoon-settings`
-                                        ? "bg-primary text-white hover:bg-primary "
-                                        : "bg-white hover:bg-slate-100 hover:text-black"
+                                        ? "bg-[#E85C0D] text-white hover:bg-primary border"
+                                        : "bg-white hover:bg-slate-100 hover:text-black border"
                                     } `}
                                 onClick={() => router.push(`/${id}/dashboard/webtoon-settings`)}
                             >

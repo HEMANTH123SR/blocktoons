@@ -52,7 +52,7 @@ export const Footer = () => {
     };
 
   return (
-    <footer className="bg-gray-100  border-t-4 border-[#E85C0D]">
+    <footer className="bg-gray-100  border-t-4 border-b-8 border-[#E85C0D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -156,16 +156,16 @@ export const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col items-center">
-          <p className="text-sm text-gray-600">
-            &copy; 2024 BlockToons. All rights reserved.
-          </p>
-          <div className="mt-2">
+        <div className="my-2 mb-8">
             <button
             onClick={handleWebClick}
             className="bg-[#E85C0D] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#55b1ab]">
               Connect Wallet
             </button>
           </div>
+          <p className="text-sm text-gray-600">
+            &copy; 2024 BlockToons. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -200,7 +200,7 @@ const Stat: React.FC<StatProps> = ({
 }) => (
   <div
     className={`flex items-center space-x-2 cursor-pointer ${
-      isActive ? "text-primary" : ""
+      isActive ? "text-[#E85C0D]" : ""
     }`}
     onClick={onClick}
   >
