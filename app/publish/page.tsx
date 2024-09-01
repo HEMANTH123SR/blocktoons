@@ -138,6 +138,8 @@ const PublishPage = () => {
         }),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         router.push("/dashboard");
       } else {
@@ -146,7 +148,7 @@ const PublishPage = () => {
 
       console.log("WebToon data:", webToonData);
       // For now, just log the data and simulate a successful creation
-      router.push("/dashboard");
+      router.push(`${data.data._id}/dashboard/chapters`);
     } catch (error) {
       if (error instanceof z.ZodError) {
         setErrors(error.formErrors.fieldErrors);
