@@ -15,7 +15,7 @@ export const Recents = ({ title }: { title: string }) => {
   useEffect(() => {
     const fetchWebToons = async () => {
       try {
-        const response = await fetch("/api"); // Adjust this URL to match your API route
+        const response = await fetch("/api");
         if (!response.ok) {
           throw new Error("Failed to fetch webToons");
         }
